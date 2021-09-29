@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'todolist/templates/todolist')
 SECRET_KEY = 'django-insecure-f#2ljwp)9ppouq*5v#*_-y8up1x=+!prz1les)0#4n+7z&z#qx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # False #
+DEBUG = False # True # 
 
 ALLOWED_HOSTS = ['arhamstodo.herokuapp.com','127.0.0.1'] #
 
@@ -86,23 +86,23 @@ STEPS FOR DJANGO POSTGRESQL DATABASE
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.sqlite3
-        'NAME': 'TODO',#BASE_DIR / 'db.sqlite3',
-        'USER':'postgres',
-        'PASSWORD':'1qaz!QAZ',
-        'HOST':'localhost',
-        'PORT': 5432
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.sqlite3
+#         'NAME': 'TODO',#BASE_DIR / 'db.sqlite3',
+#         'USER':'postgres',
+#         'PASSWORD':'1qaz!QAZ',
+#         'HOST':'localhost',
+#         'PORT': 5432
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+    }
+}
 
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
