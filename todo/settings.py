@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'todolist/templates/todolist')
 SECRET_KEY = 'django-insecure-f#2ljwp)9ppouq*5v#*_-y8up1x=+!prz1les)0#4n+7z&z#qx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # True # 
+DEBUG = True # False # 
 
 ALLOWED_HOSTS = ['arhamstodo.herokuapp.com','127.0.0.1'] #
 
