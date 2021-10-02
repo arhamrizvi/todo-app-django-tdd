@@ -19,14 +19,7 @@
             <div class="todo-list">
                 {% for todo in todos %}
                 <div class="item-row">
-                    <a class="btn btn-sm btn-info" href="{% url 'update_task' todo.id %}">Update</a>
-                    <a class="btn btn-sm btn-danger"  href="{% url 'delete' todo.id %}">Delete</a>
-                    
-                    {% if todo.complete == True %}
-                        <s>{{todo}}</s>
-                    {% else %}
-                        <span>{{todo}}</span>
-                    {% endif %}
+                    <span>{{todo}}</span>
                 </div>
                 {% endfor %}
             </div>

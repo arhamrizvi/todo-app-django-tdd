@@ -87,25 +87,25 @@ STEPS FOR DJANGO POSTGRESQL DATABASE
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.sqlite3
-        'NAME': 'd4ihd1l8q6j0dr',#'TODO',#BASE_DIR / 'db.sqlite3',
-        'USER': 'ihsclteyvbhrex',#'postgres',
-        'PASSWORD': '86c30cea1cc0fdf64461ebfc36a3753893e3d9adc3b85cbee0adb137009ec443',#'1qaz!QAZ',
-        'HOST': 'ec2-18-214-214-252.compute-1.amazonaws.com',#'localhost',
-        'PORT': 5432
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.sqlite3
+#         'NAME': 'd4ihd1l8q6j0dr',#'TODO',#BASE_DIR / 'db.sqlite3',
+#         'USER': 'ihsclteyvbhrex',#'postgres',
+#         'PASSWORD': '86c30cea1cc0fdf64461ebfc36a3753893e3d9adc3b85cbee0adb137009ec443',#'1qaz!QAZ',
+#         'HOST': 'ec2-18-214-214-252.compute-1.amazonaws.com',#'localhost',
+#         'PORT': 5432
+#     }
+# }
 
 #postgres://ihsclteyvbhrex:86c30cea1cc0fdf64461ebfc36a3753893e3d9adc3b85cbee0adb137009ec443@ec2-18-214-214-252.compute-1.amazonaws.com:5432/d4ihd1l8q6j0dr
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', #sqlite3
-#         'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', #sqlite3
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+    }
+}
 
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
