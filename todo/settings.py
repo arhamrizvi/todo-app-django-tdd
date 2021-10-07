@@ -22,7 +22,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f#2ljwp)9ppouq*5v#*_-y8up1x=+!prz1les)0#4n+7z&z#qx'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # False # 
@@ -87,25 +87,13 @@ STEPS FOR DJANGO POSTGRESQL DATABASE
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.sqlite3
-        'NAME': 'd4ihd1l8q6j0dr',#'TODO',#BASE_DIR / 'db.sqlite3',
-        'USER': 'ihsclteyvbhrex',#'postgres',
-        'PASSWORD': '86c30cea1cc0fdf64461ebfc36a3753893e3d9adc3b85cbee0adb137009ec443',#'1qaz!QAZ',
-        'HOST': 'ec2-18-214-214-252.compute-1.amazonaws.com',#'localhost',
-        'PORT': 5432
+        'ENGINE': 'django.db.backends.sqlite3', #sqlite3
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
     }
 }
-
-#postgres://ihsclteyvbhrex:86c30cea1cc0fdf64461ebfc36a3753893e3d9adc3b85cbee0adb137009ec443@ec2-18-214-214-252.compute-1.amazonaws.com:5432/d4ihd1l8q6j0dr
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', #sqlite3
-#         'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
-#     }
-# }
 
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
@@ -159,9 +147,8 @@ STATIC_URL = '/static/' # comes in by default
 #     os.path.join(BASE_DIR, "static"),
 # )
 
-#STATIC_ROOT = os.path.join(BASE_DIR, "static-root") #"live-static", 
 
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA_URL = "/media/"
 

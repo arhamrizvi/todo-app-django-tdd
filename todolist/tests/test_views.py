@@ -9,11 +9,11 @@ class TestViews(TestCase):
         """
         This method runs before the execution of each test case.
         """
-        self.client = Client() # This is a testing browser that enables us to make http requests within Django tests.
+        self.client = Client() # This is a testing browser that enables us to make http requests within Django tests. it is to mimic client behaviour.
         self.list_url = reverse('list') # The reverse function is imported in order to return a url when the url’s name is passed in as an argument.
-        # Todo.objects.create(
-        #     title='Just a test',
-        # )
+        self.test1 = Todo.objects.create(
+            title='test1',
+        )
 
     def test_list_GET(self):
         """
@@ -25,37 +25,36 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response,'todolist/list.html')
 
 
-    # def test_list_POST_adds_new_item(self):
-    #     """
-    #     """
-    #     Todo.objects.create(
-    #         title='Just a test',
-    #     )
-    #     response = self.client.post(self.list_url,{
-    #         'title':'Just a test'
-    #     })
+    def test_list_POST_adds_new_item(self):
+        """
+        When you add an item
+        """
+        
+        response = self.client.post(self.list_url,{
+            'title':'test1'
+        })
 
-    #     self.assertEquals(response.status_code,302)
-    #     self.assertAlmostEquals(Todo.first().title,'Just a test')
+        self.assertEquals(response.status_code,302)
+        self.assertEquals(self.test1.title,'test1')
 
-    # def test_list_POST_no_item(self):
-    #     """
-    #     """
-    #     Todo.objects.create(
-    #         title='Just a test',
-    #     )
-    #     response = self.client.post(self.list_url,{
-    #         'title':'Just a test'
-    #     })
+    def test_list_POST_no_item(self):
+        """
+        when no data is added
+        """
+        
+        response = self.client.post(self.list_url)
 
-    #     self.assertEquals(response.status_code,302)
-    #     self.assertAlmostEquals(Todo.count(),0)
+        self.assertEquals(response.status_code,302)
+        self.assertAlmostEquals(self.test1.title.count('title'),0)
 
-    # def test_list_create(self):
-    #     url = reverse('list')
-    #     response = self.client.post(url,{
-    #         'title':'project2'
-    #     })
+    def test_list_create(self):
+        """
+        Creatng an item
+        """
+        url = reverse('list')
+        response = self.client.post(url,{
+            'title':'test2'
+        })
 
-    #     project2 = Todo.objects.get(id=11)
-    #     self.assertEquals(project2.title,'project2')
+        project2 = Todo.objects.get(id=2)
+        self.assertEquals(project2.title,'test2')
