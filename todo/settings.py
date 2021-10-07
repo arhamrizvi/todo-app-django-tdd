@@ -153,7 +153,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' # comes in by default
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') # added later
+#STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') # added later
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, "static"),
@@ -167,9 +167,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') # added later
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
+
 
 
 # Default primary key field type
