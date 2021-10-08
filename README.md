@@ -1,36 +1,34 @@
-# Technoloy used
-## Hosting
-1. Heroku
-
-## Back-end
-1. Python (Django)
-
-## Front-end
-1. HTML
-2. CSS
-
-## Database
-1. PostgreSQL
-
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project is a simple To Do App.
 	
 ## Technologies
 Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* Python (Django)
+* HTML
+* CSS
+* PostgreSQL
+* Heroku
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this project, install the packages in requirements.txt (You will require a SECRET_KEY):
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+$ python manage.py runserver
+```
+
+To run the tests of this project:
+```
+$ python manage.py test todolist
+```
+
+AND
+
+To run the functional tests of this project:
+```
+$ python manage.py test functional_tests
 ```
